@@ -110,7 +110,7 @@
 									</div>
 									<div class="col-md-7 copy">
 										<h1>Haz tu vida más sencilla, con OrbitCloud S.A.</h1>
-										<p>Una solución fuera de orbita. 123</p>
+										<p>Una solución fuera de orbita. </p>
 										<p><a href="http://gettemplates.co" target="_blank" class="btn btn-white">Visit Gettemplates.co</a></p>
 									</div>
 								</div>
