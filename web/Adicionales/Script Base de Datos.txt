@@ -1,0 +1,101 @@
+Clientes (Id del Cliente, Nombre del cliente, correo, fecha de nacimiento)
+Sucursales (Id de la sucursal, Nombre de la sucursal)
+Tiquetes (Id del tiquete, Número del Tiquete, ID del cliente, fecha, sucursal, Descripcion)
+HistorialTiquetes (Id del tiquete, id del cliente, fecha, sucursal, descripcion)
+
+
+/------ Script ---------/
+
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- -----------------------------------------------------
+-- Schema orbitQueues_DB
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema orbitQueues_DB
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `orbitQueues_DB` DEFAULT CHARACTER SET utf8 ;
+USE `orbitQueues_DB` ;
+
+-- -----------------------------------------------------
+-- Table `orbitQueues_DB`.`Clientes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `orbitQueues_DB`.`Clientes` (
+  `idCliente` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `correo` VARCHAR(45) NOT NULL,
+  `fecha` DATETIME NOT NULL,
+  PRIMARY KEY (`idCliente`),
+  UNIQUE INDEX `idClientes_UNIQUE` (`idCliente` ASC))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `orbitQueues_DB`.`Sucursales`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `orbitQueues_DB`.`Sucursales` (
+  `idSucursal` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idSucursal`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `orbitQueues_DB`.`Tiquetes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `orbitQueues_DB`.`Tiquetes` (
+  `idTiquete` INT NOT NULL,
+  `numero` INT NOT NULL,
+  `idCliente` INT NOT NULL,
+  `fecha` DATETIME NOT NULL,
+  `idSucursal` INT NOT NULL,
+  `descripcion` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idTiquete`),
+  INDEX `idCliente_idx` (`idCliente` ASC),
+  INDEX `idSucursal_idx` (`idSucursal` ASC),
+  CONSTRAINT `idCliente`
+    FOREIGN KEY (`idCliente`)
+    REFERENCES `orbitQueues_DB`.`Clientes` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `idSucursal`
+    FOREIGN KEY (`idSucursal`)
+    REFERENCES `orbitQueues_DB`.`Sucursales` (`idSucursal`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `orbitQueues_DB`.`HistorialTiquetes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `orbitQueues_DB`.`HistorialTiquetes` (
+  `idHistorialTiquete` INT NOT NULL,
+  `idCliente` INT NOT NULL,
+  `fecha` DATETIME NOT NULL,
+  `idSucursal` INT NOT NULL,
+  `descripcion` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idHistorialTiquete`),
+  INDEX `idCliente_idx` (`idCliente` ASC),
+  INDEX `idSucursal_idx` (`idSucursal` ASC),
+  CONSTRAINT `idClienteH`
+    FOREIGN KEY (`idCliente`)
+    REFERENCES `orbitQueues_DB`.`Clientes` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `idSucursalH`
+    FOREIGN KEY (`idSucursal`)
+    REFERENCES `orbitQueues_DB`.`Sucursales` (`idSucursal`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
