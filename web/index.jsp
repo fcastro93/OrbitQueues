@@ -109,8 +109,8 @@
 										<img src="images/cube.png" alt="Free HTML5 Website Template by GetTemplates.co">
 									</div>
 									<div class="col-md-7 copy">
-										<h1>Haz tu vida m√°s sencilla, con OrbitCloud S.A.</h1>
-										<p>Una ssoluci√≥n fuera de orbita.</p>
+										<h1>Haz tu vida m·s sencilla, con OrbitCloud S.A.</h1>
+										<p>Una soluciÛn fuera de orbita.</p>
 										<p><a href="http://gettemplates.co" target="_blank" class="btn btn-white">Visit Gettemplates.co</a></p>
 									</div>
 								</div>
