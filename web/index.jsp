@@ -95,34 +95,7 @@
 		</header>
 		<!-- END #gtco-header -->
 
-		<div class="gtco-client">
-			<div class="gtco-container">
-				
-			</div>
-		</div>
-		<!-- END .gtco-client -->
-
-		<div class="gtco-services gtco-section">
-			<div class="gtco-container">
-				
-			</div>
-		</div>
-		<!-- END .gtco-services -->
-
-		<div class="gtco-section gtco-products">
-			<div class="gtco-container">
-				
-			</div>
-		</div>
-		<!-- END .gtco-products -->
-
-		<div class="gtco-section gtco-testimonial gtco-gray">
-			<div class="gtco-container">
-
-			</div>
-		</div>
 		
-
 		<footer id="gtco-footer" class="gtco-section" role="contentinfo">
 			<div class="gtco-container">
 				<div class="row row-pb-md">
