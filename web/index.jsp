@@ -88,14 +88,20 @@
 			</div>
 		</nav>
 
+            <!-- Inicio de contenido del Index -->
+            
+            
 		<header id="gtco-header" class="gtco-cover" role="banner">
 			<div class="gtco-container">
-				<h1 class="no-margin">Home</h1>
+				<h1 class="no-margin"></h1>
 			</div>
 		</header>
-		<!-- END #gtco-header -->
+            
+            
+		<!-- Fin del contenido del Index -->
 
 		
+
 		<footer id="gtco-footer" class="gtco-section" role="contentinfo">
 			<div class="gtco-container">
 				<div class="row row-pb-md">
